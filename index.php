@@ -24,14 +24,34 @@
 					<h1 class="w3-xxxlarge w3-text-white">IDE</h1>
 					<p class = "w3-large w3-text-white">Interactive Digital Learning Environment</p>
 					<p class= "w3-text-white w3-small">-Faculty of Information Technology and Science-</p>
-					<button id="btnLogin" class="w3-btn w3-light-gray w3-opacity-min">Login</button>
+					<button 
+						id="btnLogin" 
+						class="w3-btn w3-light-gray w3-opacity-min" 
+						onclick="document.getElementById('loginModal').style.display='block'">Login</button>
 				</div>
 			</div>
 
 			<div class="w3-display-bottomleft" style = "margin-left:20px">
 				<p>&copy; Developed by Irvan & Nico</p>
 			</div>
-			
+
+			<div id="loginModal" class="w3-modal" style="color:black">
+				<div class="w3-modal-content">
+					<span onclick="document.getElementById('loginModal').style.display='none'" 
+		class="w3-button w3-display-topright">&times;</span>
+					<div class="w3-container">
+						<h2>Login</h2>
+					</div>
+
+					<form class="w3-container" action="POST">
+						<input class="w3-input" type="text" placeholder="Username" name="username">
+						<input class="w3-input" type="text" placeholder="Password" name="password">
+
+						<input type="submit" class="w3-btn w3-blue-grey" value = "Login">
+					</form>
+					
+				</div>
+			</div>
 		</div>		
 	</body>
 </html>
