@@ -29,7 +29,7 @@
 			</div>
 
 			<div class="w3-display-bottomleft" style = "margin-left:20px">
-				<p>&copy; Developed by Irvan & Nico</p>
+				<p>&copy; Developed by Nico & Irvan</p>
 			</div>
 			
 		</div>		
