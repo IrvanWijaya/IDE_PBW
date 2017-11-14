@@ -49,3 +49,35 @@
     margin: 10px 0 26px 16px;
     margin-top: 10px;
 }
+
+.header{
+    color: white;
+    background-color: #303026;
+}
+
+.header h1{
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.header h1,p{
+    margin-left: 20px;
+}
+
+.header hr{
+    display: block;
+    margin: 0.5em 60px 2.5em 0;
+    margin-left: auto;
+    border: 3px solid white;
+}
+
+.tempImg{
+    height: 160px;
+    width: 160px;
+    margin: 20px 180px 0 0;
+}
+
+.tempImg img{
+    height: 100%;
+    width: 100%;
+}
