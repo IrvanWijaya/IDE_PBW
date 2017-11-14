@@ -5,7 +5,7 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         if ($username != "" && $password != "") {
-            $query = "SELECT * FROM users WHERE username LIKE '%$username%'";
+            $query = "SELECT * FROM users WHERE username = $username";
             $result = $conn->query($query);
             $row = $result->fetch_array();
 
@@ -13,14 +13,14 @@
                 echo "WRONG USERNAME";
             } else {
                 if ($row['pass'] == $password) {
-                    $query = "SELECT * FROM usergroups JOIN users ON usergroups.ID_UG = users.ID_UG 
-                                WHERE userID = 20160065";
+                    $query = "SELECT * FROM usergroups JOIN users ON usergroups.ID_UG = users.ID_UG
+                                WHERE username = $username";
                     $result = $conn->query($query);
 
                     while ($row = $result->fetch_array()) {
-                        echo "$row['userID']";
-                        echo "$row['name']";
-                        echo "$row['role']";
+                        echo "$row[userID]";
+                        echo "$row[name]";
+                        echo "$row[name]";
                     }
 
                     /*if ($row['role'] == "lecturer") {
