@@ -35,21 +35,23 @@
 				<p>&copy; Developed by Irvan & Nico</p>
 			</div>
 
-			<div id="loginModal" class="w3-modal" style="color:black">
-				<div class="w3-modal-content">
-					<span onclick="document.getElementById('loginModal').style.display='none'" 
-		class="w3-button w3-display-topright">&times;</span>
+			<div id="loginModal" class="w3-modal " style="color:black;">
+				<div class="w3-modal-content w3-display-middle modalContent">
+					<a href="#" onclick="document.getElementById('loginModal').style.display='none'" 
+							class="w3-button w3-display-topright modalBtnClose">&times;</a>
 					<div class="w3-container">
 						<h2>Login</h2>
 					</div>
 
-					<form class="w3-container" method="POST" action="phpScript/login.php">
+					<form class="w3-container formInput" method="POST" action="phpScript/login.php">
 						<input class="w3-input" type="text" placeholder="Username" name="username">
 						<input class="w3-input" type="text" placeholder="Password" name="password">
 
-						<input type="submit" class="w3-btn w3-blue-grey" value = "Login">
+						<input type="submit" class="w3-btn w3-blue-black" value = "Login">
 					</form>
-					
+					<div id="forgetLink">
+						<a href="#">Forget password</a> <span>or</span> <a href="#">Forget username?</a>
+					</div>
 				</div>
 			</div>
 		</div>		

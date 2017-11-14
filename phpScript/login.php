@@ -1,26 +1,35 @@
 <?php
-	include 'connection.php','index.php';
-    $query = "SELECT * FROM users";
-    $query2 = "SELECT * FROM usergroups JOIN users ON usergorups.ID_UG = users.ID_UG";
-    
-    if (isset($_GET['username']) && isset($_GET['password'])) {
-        $username = $_GET['username'];
-        $password = $_GET['password'];
-        if ($username != "" && $password != "" && $result = $conn->query($query) && $result2 = $conn->query($query2)) {
-            while ($row = $result->fetch_array()) {
-                if ($row['username'] == $username) {
-                    if ($row['password'] == $password) {
-                        $userID = $row['userID'];
-                        while ($row = $result2->fetch_array()) {
-                            if ($row['userID'] == $userID) {
-                                if ($row['userID'] == "lecturer") {
-                                    header ('Location: pages/lecturer/lct.php');
-                                } else {
-                                    header ('Location: pages/student/std.php');
-                                }
-                            }
-                        }
+    include 'connection.php';
+
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        if ($username != "" && $password != "") {
+            $query = "SELECT * FROM users WHERE username LIKE '%$username%'";
+            $result = $conn->query($query);
+            $row = $result->fetch_array();
+
+            if ($conn->query($query)->num_rows==0) {
+                echo "WRONG USERNAME";
+            } else {
+                if ($row['pass'] == $password) {
+                    $query = "SELECT * FROM usergroups JOIN users ON usergroups.ID_UG = users.ID_UG 
+                                WHERE userID = 20160065";
+                    $result = $conn->query($query);
+
+                    while ($row = $result->fetch_array()) {
+                        echo "$row['userID']";
+                        echo "$row['name']";
+                        echo "$row['role']";
                     }
+
+                    /*if ($row['role'] == "lecturer") {
+                        header('Location: ../pages/lecturer/lct.php');
+                    } else {
+                        header('Location: ../pages/student/std.php');
+                    }*/
+                } else {
+                    echo "WRONG PASSWORD";
                 }
             }
         }
