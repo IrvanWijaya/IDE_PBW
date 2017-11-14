@@ -43,7 +43,7 @@
 						<h2>Login</h2>
 					</div>
 
-					<form class="w3-container" action="POST">
+					<form class="w3-container" method="POST" action="phpScript/login.php">
 						<input class="w3-input" type="text" placeholder="Username" name="username">
 						<input class="w3-input" type="text" placeholder="Password" name="password">
 
