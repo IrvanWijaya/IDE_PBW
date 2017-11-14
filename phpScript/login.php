@@ -13,21 +13,16 @@
                 echo "WRONG USERNAME";
             } else {
                 if ($row['pass'] == $password) {
-                    $query = "SELECT * FROM usergroups JOIN users ON usergroups.ID_UG = users.ID_UG
+                    $query = "SELECT userID, users.name, usergroups.name as role FROM usergroups JOIN users ON usergroups.ID_UG = users.ID_UG
                                 WHERE username = $username";
                     $result = $conn->query($query);
+                    $row = $result->fetch_array();
 
-                    while ($row = $result->fetch_array()) {
-                        echo "$row[userID]";
-                        echo "$row[name]";
-                        echo "$row[name]";
-                    }
-
-                    /*if ($row['role'] == "lecturer") {
+                    if ($row['role'] == "lecturer") {
                         header('Location: ../pages/lecturer/lct.php');
                     } else {
                         header('Location: ../pages/student/std.php');
-                    }*/
+                    }
                 } else {
                     echo "WRONG PASSWORD";
                 }
