@@ -18,7 +18,7 @@
 #btnLogin{
     height: 50px;
     width: 80px;
-    margin-top: 25px;
+    margin: 25px 0 0 20px;
 }
 
 #bgImage{
@@ -64,20 +64,56 @@
     margin-left: 20px;
 }
 
+.header p{
+    color: lightgray;
+}
+
 .header hr{
     display: block;
     margin: 0.5em 60px 2.5em 0;
     margin-left: auto;
-    border: 3px solid white;
+    border: 3px solid lightgray;
 }
 
-.tempImg{
+.tempImgLogo{
     height: 160px;
     width: 160px;
     margin: 20px 180px 0 0;
 }
 
-.tempImg img{
+.tempImgLogo img{
     height: 100%;
     width: 100%;
+}
+
+.sidebar{
+    padding-top: 50px;
+}
+
+.sidebar p{
+    margin-left: 30px;
+}
+
+.sidebar hr{
+    display: block;
+    margin: 15px 30px;
+    border: 3px solid lightgray;
+}
+
+.tempImgProf{
+    height: 100px;
+    width: 100px;
+    margin-left: 30px;
+    border: 1px solid lightgray;
+}
+
+.tempImgProf img{
+    height: 100%;
+    width: 100%;
+}
+
+.sidebar a{
+    display: block;
+    margin: 20px 40px;
+    text-decoration: none;
 }

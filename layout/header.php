@@ -1,5 +1,5 @@
 <div class="w3-container header">
-    <div class="w3-right tempImg">
+    <div class="w3-right tempImgLogo">
         <img src="../../img/logo.png">
     </div>
 

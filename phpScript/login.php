@@ -1,5 +1,7 @@
 <?php
     include 'connection.php';
+    $userID = "a";
+    $name = "b";
 
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = $_POST['username'];
@@ -13,11 +15,16 @@
                 echo "WRONG USERNAME";
             } else {
                 if ($row['pass'] == $password) {
+
+                    $userID = $row['userID'];
+                    $name = $row['name'];
+                    echo "$row[userID]";
+
                     $query = "SELECT userID, users.name, usergroups.name as role FROM usergroups JOIN users ON usergroups.ID_UG = users.ID_UG
                                 WHERE username = $username";
                     $result = $conn->query($query);
                     $row = $result->fetch_array();
-
+                    
                     if ($row['role'] == "lecturer") {
                         header('Location: ../pages/lecturer/lct.php');
                     } else {

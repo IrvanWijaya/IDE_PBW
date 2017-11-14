@@ -21,7 +21,7 @@
 
 			<div class="w3-third w3-display-left">
 				<div class="w3-container ">
-					<h1 class="w3-xxxlarge w3-text-white">IDE</h1>
+					<h1 class="w3-xxxlarge w3-text-white" style = "margin-left: 20px">IDE</h1>
 					<p class = "w3-large w3-text-white">Interactive Digital Learning Environment</p>
 					<p class= "w3-text-white w3-small">-Faculty of Information Technology and Science-</p>
 					<button 
@@ -45,7 +45,7 @@
 
 					<form class="w3-container formInput" method="POST" action="phpScript/login.php">
 						<input class="w3-input" type="text" placeholder="Username" name="username">
-						<input class="w3-input" type="text" placeholder="Password" name="password">
+						<input class="w3-input" type="password" placeholder="Password" name="password">
 
 						<input type="submit" class="w3-btn w3-blue-black" value = "Login">
 					</form>

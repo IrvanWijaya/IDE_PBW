@@ -1,5 +1,19 @@
-<div class="w3-sidebar w3-bar-block w3-red" style="width:25%">
-    <a href="#" class="w3-bar-item w3-button">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button">Link 3</a>
+<div class="w3-sidebar w3-bar-block w3-light-grey sidebar" style="width:25%;">
+
+    <p>You are logged in as</p>
+
+    <?php
+        include("../../phpScript/login.php");
+        echo "$userID";
+    ?>
+
+    <hr>
+    <div class="tempImgProf">
+        <img src = "../../img/profile.png">
+    </div>
+    
+    <a href="#" class="w3-bar-item w3-button"> <i class="fa fa-home" style="font-size:18px;width:40px"></i> HOME</a>
+    <a href="#" class="w3-bar-item w3-button"> <i class="fa fa-list" style="font-size:18px;width:40px"></i> MY COURSES</a>
+    <a href="#" class="w3-bar-item w3-button"> <i class="fa fa-user" style="font-size:18px;width:40px"></i> MY PROFILE</a>
+    <a href="../../index.php" class="w3-bar-item w3-button"> <i class="fa fa-power-off" style="font-size:18px;width:40px"></i> LOGOUT</a>
 </div>
