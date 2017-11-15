@@ -39,8 +39,6 @@
                     echo "WRONG PASSWORD";
                 }
             }
-        } else {
-            echo "Please fill the empty input!";
         }
     }
 ?>
