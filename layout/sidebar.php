@@ -5,8 +5,8 @@
     <?php
         include("../../phpScript/login.php");
 
-        echo "<p class='userInfo'>".$_SESSION['userID'] . "</p>";
-        echo "<p class='userInfo'>".$_SESSION['name'] . "</p>";
+        echo "<p class='userInfo'>". $_SESSION['userID'] . "</p>";
+        echo "<p class='userInfo'>". $_SESSION['name'] . "</p>";
     ?>
 
     <hr>

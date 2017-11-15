@@ -32,7 +32,7 @@
 			</div>
 
 			<div class="w3-display-bottomleft" style = "margin-left:20px">
-				<p>&copy; Developed by Nico & Irvan</p>
+				<p>&copy; Developed by Irvan & Nico</p>
 			</div>
 
 			<div id="loginModal" class="w3-modal " style="color:black;">
@@ -46,7 +46,7 @@
 					<form class="w3-container formInput" method="POST" action="phpScript/login.php">
 						<input class="w3-input" type="text" placeholder="Username" name="username" value='<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'];}?>'>
 						<input class="w3-input" type="password" placeholder="Password" name="password">
-						<input type="submit" class="w3-btn w3-blue-black" value = "Login">
+						<input type="submit" class="w3-btn w3-blue-black" value = "Login" name="submit">
 					</form>
 					<div id="forgetLink">
 						<a href="#">Forget password</a> <span>or</span> <a href="#">Forget username?</a>

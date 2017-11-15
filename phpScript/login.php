@@ -14,10 +14,6 @@
                 echo "WRONG USERNAME";
             } else {
                 if ($row['pass'] == $password) {
-
-                    /*$query = "SELECT userID, users.name, usergroups.name as role FROM usergroups JOIN users ON usergroups.ID_UG = users.ID_UG
-                                WHERE username = $username";*/
-
                     $query = "SELECT users.ID_U as id, users.username as username,
                             users.pass as pass, users.userID as userid,
                             users.name as name, usergroups.name as position
@@ -28,10 +24,11 @@
                     $result = $conn->query($query);
                     $row = $result->fetch_array();
 
+                    $_SESSION['username'] = $row['username'];
                     $_SESSION['name'] = $row['name'];
                     $_SESSION['userID'] = $row['userid'];
-                    echo $_SESSION['name'];
-                    echo $_SESSION['userID'];
+                    $cookie_username = $_SESSION['username'];
+                    setcookie('username', $cookie_username, time() + (86400 * 30), "../../index.php");
                     
                     if ($row['position'] == "lecturer") {
                         header('Location: ../pages/lecturer/lct.php');
@@ -42,6 +39,8 @@
                     echo "WRONG PASSWORD";
                 }
             }
+        } else {
+            echo "Please fill the empty input!";
         }
     }
 ?>
