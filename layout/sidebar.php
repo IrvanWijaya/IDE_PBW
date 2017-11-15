@@ -4,6 +4,9 @@
 
     <?php
         include("../../phpScript/login.php");
+
+        echo "<p class='userInfo'>".$_SESSION['userID'] . "</p>";
+        echo "<p class='userInfo'>".$_SESSION['name'] . "</p>";
     ?>
 
     <hr>
@@ -13,11 +16,7 @@
     
     <a href="<?php 
                 $link = $_SESSION['position'];
-                if($link == 'lecturer'){
-                    echo 'lct.php';
-                }else{
-                    echo 'std.php;'
-                }
+                echo $link;
             ?>" class="w3-bar-item w3-button"> <i class="fa fa-home" style="font-size:18px;width:40px"></i> HOME</a>
     <a href="#" class="w3-bar-item w3-button"> <i class="fa fa-list" style="font-size:18px;width:40px"></i> MY COURSES</a>
     <a href="#" class="w3-bar-item w3-button"> <i class="fa fa-user" style="font-size:18px;width:40px"></i> MY PROFILE</a>
