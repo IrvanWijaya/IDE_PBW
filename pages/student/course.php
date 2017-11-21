@@ -32,6 +32,23 @@
 					$_SESSION['courseID'] = $_GET['id'];
 					
 					include("../../phpScript/topics.php");
+					 while($row)
+					{
+						echo 	"<div class = 'w3-display-container w3-panel w3-card-4 topicList'>
+									<i class = 'fa fa-newspaper-o'></i><span> Topic ". $row['topic'] . "</span></br> 
+									<a href='#'>" . $row['title']."</a>";
+								
+								$temp = $row['topic'];
+
+								while($row = $result->fetch_array()){
+									if($row['topic'] != $temp){
+										break;
+									}
+									echo "<a href='#'>" . $row['title'] . "</a>";
+								}
+
+						echo    "</div>";
+					}
 				?>
 			</div>
 		</div>
