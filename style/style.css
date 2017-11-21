@@ -1,15 +1,13 @@
-.overflowHidden{
-    overflow: hidden;
+/*
+some general style
+*/
+.noTextDecoration{
+    text-decoration: none;
 }
 
-.clearBoth{
-    clear: both;
-}
-
-.positionStatic{
-    position: static;
-}
-
+/*
+index.php
+*/
 .btnMenuIndex{
     margin : 20px 0px 0px 5px;
     height: 40px;
@@ -50,6 +48,9 @@
     margin-top: 10px;
 }
 
+/*
+header
+*/
 .header{
     color: white;
     background-color: #303026;
@@ -86,8 +87,12 @@
     width: 100%;
 }
 
+/*
+sidebar
+*/
 .sidebar{
     padding-top: 50px;
+    margin-top: -5px;
 }
 
 .sidebar p{
@@ -118,7 +123,23 @@
 }
 
 .sidebar a{
-    padding-left: 0 !important;
     margin: 10px 30px;
     text-decoration: none;
+}
+
+/*
+main content
+*/
+.overview{
+    margin: 5px 10px 15px 10px;
+    padding: 0px;
+}
+
+.coursesList{
+    font-size: 18px;
+    height: 3.5em;
+}
+
+.coursesList a{
+    margin-left: 20px;
 }

@@ -23,10 +23,13 @@
                 $row = $result->fetch_array();
                 if ($row['pass'] == $password) {
 
-                    //buat sidebar
+                    //buat cookie
                     $_SESSION['username'] = $row['username'];
+                    //buat sidebar
                     $_SESSION['name'] = $row['name'];
                     $_SESSION['userID'] = $row['userid'];
+                    //buat enrolment
+                    $_SESSION['ID_U'] = $row['id'];
 
                     //bwt redirect ke halaman yang tepat (dosen atau mahasiswa)
                     $_SESSION['position'] = $row['position'];

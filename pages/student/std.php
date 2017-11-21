@@ -6,6 +6,7 @@
 <html>
 	<head>
 		<title>IDE</title>
+		<!-- include style -->
 		<?php 
 			include("../../layout/style.php");
 		?>
@@ -18,10 +19,11 @@
 			include("../../layout/header.php");
 		?>
 		<div class="w3-main">
+			<!-- include sidebar -->
 			<?php 
 				include("../../layout/sidebar.php");
 			?>
-			<!-- include sidebar -->
+
 		</div>
 	</body>
 </html>
