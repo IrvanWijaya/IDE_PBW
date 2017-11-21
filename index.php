@@ -44,7 +44,8 @@
 					</div>
 
 					<form class="w3-container formInput" method="POST" action="phpScript/login.php">
-						<input class="w3-input" type="text" placeholder="Username" name="username" required value='<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'];}?>'>
+						<input class="w3-input" type="text" placeholder="Username" name="username" required 
+								value= "<?php if(isset($_COOKIE['username'])){echo $_COOKIE['username'];}?>">
 						<input class="w3-input" type="password" placeholder="Password" name="password" required>
 						<input type="submit" class="w3-btn w3-black" value = "Login" name="submit">
 					</form>
