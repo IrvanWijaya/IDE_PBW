@@ -30,8 +30,7 @@
 
                     $_SESSION['name'] = $row['name'];
                     $_SESSION['userID'] = $row['userid'];
-                    echo $_SESSION['name'];
-                    echo $_SESSION['userID'];
+                    $_SESSION['position'] = $row['position'];
                     
                     if ($row['position'] == "lecturer") {
                         header('Location: ../pages/lecturer/lct.php');
