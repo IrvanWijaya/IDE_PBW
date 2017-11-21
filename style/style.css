@@ -135,6 +135,10 @@ main content
     padding: 0px;
 }
 
+.overview h1{
+    margin-top: 0px;
+}
+
 .coursesList{
     font-size: 18px;
     height: 3.5em;
@@ -142,4 +146,22 @@ main content
 
 .coursesList a{
     margin-left: 20px;
+}
+
+/*
+topics.php
+*/
+
+.topicList{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.topicList a{
+    display: block;
+    margin-top: 10px;
+}
+
+.btnAddActivity{
+    margin-top: 10px;
 }

@@ -26,10 +26,12 @@
 			<div style="margin-left:25%">
 
 			<div class="w3-container overview">
-				<h1 class = "w3-panel w3-gray">COURSE OVERVIEW</h1>
+				<h1 class = "w3-panel w3-gray"><?php echo $_GET['courseTitle']?></h1>
 
 				<?php 
-					include("../../phpScript/courses.php");
+					$_SESSION['courseID'] = $_GET['id'];
+					
+					include("../../phpScript/topics.php");
 				?>
 			</div>
 		</div>
