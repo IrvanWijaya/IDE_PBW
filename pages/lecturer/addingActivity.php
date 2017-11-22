@@ -32,38 +32,58 @@
                     <button class="w3-right w3-button w3-black">Collapse All</button>
                 </div>
 
-                <form class= "addActForm">
+                
                 <fieldset>
-                <legend><button class= "w3-button w3-black">General</button></legend>
-                    <label class="w3-quarter">Name:</label> 
-                        <div class="w3-rest">
-                            <input type="text" class="w3-input w3-border">
+                <legend><button onclick= "myFunction('General')" class= "w3-button w3-black">General</button></legend>
+                    <form class= "addActForm">
+                    <div id="General" class="w3-hide">
+                        <div class="w3-quarter w3-display-container">
+                        <label class="w3-display-middle">Name:</label> 
+                            <div class="w3-rest">
+                                <input type="text" class="w3-input w3-border">
+                            </div>
                         </div>
-                    <label class="w3-quarter">Description:</label> 
-                        <div class="w3-rest">
-                            <textarea  class="w3-input w3-border" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
+                        <div class="w3-quarter w3-display-container">
+                        <label class="w3-display-middle">Description:</label> 
+                            <div class="w3-rest">
+                                <textarea  class="w3-input w3-border" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
+                            </div>
                         </div>
+                    </div>
                 </fieldset>
-                </form>
 
-                <form class= "addActForm">
+            
                 <fieldset>
-                <legend><button class= "w3-button w3-black">Availability</button></legend>
+                <legend><button onclick= "myFunction('Availability')" class= "w3-button w3-black">Availability</button></legend>
+                    <div id="Availability" class="w3-hide">
                     Name: <input type="text"><br>
                     Email: <input type="text"><br>
                     Date of birth: <input type="text">
+                    </div>
                 </fieldset>
-                </form>
+             
 
-                <form class= "addActForm">
+     
                 <fieldset>
-                <legend><button class= "w3-button w3-black">Content</button></legend>
+                <legend><button onclick= "myFunction('Content')" class= "w3-button w3-black">Content</button></legend>
+                    <div id="Content" class="w3-hide">
                     Name: <input type="text"><br>
                     Email: <input type="text"><br>
                     Date of birth: <input type="text">
+                    </div>
                 </fieldset>
-                </form>
 			</div>
 		</div>
+
+        <script>
+            function myFunction(id) {
+                var x = document.getElementById(id);
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else { 
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
 	</body>
 </html>

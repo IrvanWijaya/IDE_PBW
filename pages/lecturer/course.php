@@ -73,9 +73,6 @@
   							<i class="fa fa-file-o"></i> <label>File</label></p>
 						<input type="submit" class="w3-btn w3-black" value = "Add" name="submit">
 					</form>
-					<div id="forgetLink">
-						<a href="#">Forget password</a> <span>or</span> <a href="#">Forget username?</a>
-					</div>
 				</div>
 			</div>
 
