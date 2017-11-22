@@ -35,7 +35,7 @@
                     $_SESSION['position'] = $row['position'];
 
                     $cookie_username = $_SESSION['username'];
-                    setcookie('username', $cookie_username, time() + (86400 * 30), "../index.php");
+                    setcookie('username', $cookie_username, time() + (86400 * 30), "/");
                     
                     if ($row['position'] == "lecturer") {
                         header('Location: ../pages/lecturer/lct.php');
