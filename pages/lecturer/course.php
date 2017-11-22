@@ -25,6 +25,7 @@
 			?>
 			<div style="margin-left:25%">
 
+
 			<div class="w3-container overview">
 				<h1 class = "w3-panel w3-gray"><?php echo $_GET['courseTitle']?></h1>
 
@@ -32,10 +33,11 @@
 					$_SESSION['courseID'] = $_GET['id'];
 					
 					include("../../phpScript/topics.php");
-					while($row)
+					$i;
+					for($i = 1; $i <= 4; $i++)
 					{
-						echo 	"<div class = 'w3-display-container w3-panel w3-card-4 topicList'>
-									<i class = 'fa fa-newspaper-o'></i><span> Topic ". $row['topic'] . "</span></br> 
+						echo 	"<div id ='$i'class = 'w3-display-container w3-panel w3-card-4 topicList'>
+									<i class = 'fa fa-newspaper-o'></i><span> Topic ". $i . "</span></br> 
 									<a href='#'>" . $row['title']."</a>";
 								
 								$temp = $row['topic'];
@@ -50,7 +52,6 @@
 								<button 
 									class="w3-btn w3-gray w3-opacity-min btnAddActivity" 
 									onclick="document.getElementById('addActModal').style.display='block'">Add Activity</button>
-
 						<?php echo    "</div>";
 					}
 				?>
@@ -64,7 +65,7 @@
 						<h2>Select Activity</h2>
 					</div>
 
-					<form class="w3-container formInput" method="POST" action="addingActivity.php">
+					<form class="w3-container formInput" method="POST" action="addingActivity.php?topic=">
 						<p>
 						  	<input class="w3-radio" type="radio" name="addAct" value="Assignment" checked>
   							<i class="fa fa-file-text-o"></i> <label>Assignment</label></p>
@@ -77,5 +78,11 @@
 			</div>
 
 		</div>
+
+		<script>
+			function addActivity(){
+				$("addActModal").;
+			}
+		</script>
 	</body>
 </html>
