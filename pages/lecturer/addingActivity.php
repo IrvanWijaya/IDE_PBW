@@ -26,18 +26,18 @@
 			<div style="margin-left:25%">
 
 			<div class="w3-container overview">
-				<h1 class = "w3-panel w3-gray">Adding New Assignment</h1>
+				<h1 class = "w3-panel w3-gray marginRight10">Adding New Assignment</h1>
 
                 <div style="height:40px; width:100%">
-                    <button class="w3-right w3-button w3-black">Collapse All</button>
+                    <button class="w3-right w3-button w3-black marginRight10">Collapse All</button>
                 </div>
 
                 
-                <fieldset class = "w3-margin-bottom">
+                <fieldset class = "w3-margin-bottom marginRight10">
                 <legend><button onclick= "myFunction('General')" class= "w3-button w3-black">General</button></legend>
                     <form class= "addActForm">
                     <div id="General" class="w3-show marginRight">
-                        <div class="w3-display-container">
+                        <div class="w3-display-container marginB10">
                             <div class="w3-quarter w3-display-container" style="height: 40px">
                                 <label class="w3-display-middle w3-text-red">Name *</label> 
                             </div>
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="w3-display-container">
-                            <div class="w3-quarter w3-display-container" style="height: 40px">
+                            <div class="w3-quarter w3-display-container" style="height: 100px">
                                 <label class="w3-display-middle">Description</label> 
                             </div>
                             <div class="w3-rest">
@@ -58,7 +58,7 @@
                 </fieldset>
 
             
-                <fieldset class = "w3-margin-bottom">
+                <fieldset class = "w3-margin-bottom marginRight10">
                 <legend><button onclick= "myFunction('Availability')" class= "w3-button w3-black">Availability</button></legend>
                     <div id="Availability" class="w3-show marginRight">
                         <div class="w3-display-container">
@@ -80,7 +80,7 @@
                     </div>
                 </fieldset>
      
-                <fieldset class = "w3-margin-bottom">
+                <fieldset class = "w3-margin-bottom marginRight10">
                 <legend><button onclick= "myFunction('Content')" class= "w3-button w3-black">Content</button></legend>
                     <div id="Content" class="w3-show marginRight">
                         <div class="w3-display-container">
