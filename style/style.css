@@ -9,6 +9,10 @@ body{
     text-decoration: none;
 }
 
+.marginRight{
+    margin-right: 100px;
+}
+
 /*
 index.php
 */

@@ -33,43 +33,64 @@
                 </div>
 
                 
-                <fieldset>
+                <fieldset class = "w3-margin-bottom">
                 <legend><button onclick= "myFunction('General')" class= "w3-button w3-black">General</button></legend>
                     <form class= "addActForm">
-                    <div id="General" class="w3-hide">
-                        <div class="w3-quarter w3-display-container">
-                        <label class="w3-display-middle">Name:</label> 
+                    <div id="General" class="w3-show marginRight">
+                        <div class="w3-display-container">
+                            <div class="w3-quarter w3-display-container" style="height: 40px">
+                                <label class="w3-display-middle w3-text-red">Name *</label> 
+                            </div>
                             <div class="w3-rest">
                                 <input type="text" class="w3-input w3-border">
                             </div>
                         </div>
-                        <div class="w3-quarter w3-display-container">
-                        <label class="w3-display-middle">Description:</label> 
+                        <div class="w3-display-container">
+                            <div class="w3-quarter w3-display-container" style="height: 40px">
+                                <label class="w3-display-middle">Description</label> 
+                            </div>
+                            <div class="w3-rest">
+                                <textarea  class="w3-input w3-border" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </fieldset>
+
+            
+                <fieldset class = "w3-margin-bottom">
+                <legend><button onclick= "myFunction('Availability')" class= "w3-button w3-black">Availability</button></legend>
+                    <div id="Availability" class="w3-show marginRight">
+                        <div class="w3-display-container">
+                            <div class="w3-quarter w3-display-container" style="height: 40px">
+                                <label class="w3-display-middle">Allow subsmissions from</label> 
+                            </div>
+                            <div class="w3-rest">
+                                <input type="text" class="w3-input w3-border">
+                            </div>
+                        </div>
+                        <div class="w3-display-container">
+                            <div class="w3-quarter w3-display-container" style="height: 40px">
+                                <label class="w3-display-middle">Dude date</label> 
+                            </div>
                             <div class="w3-rest">
                                 <textarea  class="w3-input w3-border" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
                             </div>
                         </div>
                     </div>
                 </fieldset>
-
-            
-                <fieldset>
-                <legend><button onclick= "myFunction('Availability')" class= "w3-button w3-black">Availability</button></legend>
-                    <div id="Availability" class="w3-hide">
-                    Name: <input type="text"><br>
-                    Email: <input type="text"><br>
-                    Date of birth: <input type="text">
-                    </div>
-                </fieldset>
-             
-
      
-                <fieldset>
+                <fieldset class = "w3-margin-bottom">
                 <legend><button onclick= "myFunction('Content')" class= "w3-button w3-black">Content</button></legend>
-                    <div id="Content" class="w3-hide">
-                    Name: <input type="text"><br>
-                    Email: <input type="text"><br>
-                    Date of birth: <input type="text">
+                    <div id="Content" class="w3-show marginRight">
+                        <div class="w3-display-container">
+                            <div class="w3-quarter w3-display-container" style="height: 40px">
+                                <label class="w3-display-middle">Select files</label> 
+                            </div>
+                            <div class="w3-rest">
+                                <input type="text" class="w3-input w3-border">
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
 			</div>
@@ -81,7 +102,7 @@
                 if (x.className.indexOf("w3-show") == -1) {
                     x.className += " w3-show";
                 } else { 
-                    x.className = x.className.replace(" w3-show", "");
+                    x.className = x.className.replace(" w3-hide", "");
                 }
             }
         </script>
