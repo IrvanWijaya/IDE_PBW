@@ -29,13 +29,13 @@
 				<h1 class = "w3-panel w3-gray marginRight10">Adding New Assignment</h1>
 
                 <div style="height:40px; width:100%">
-                    <button class="w3-right w3-button w3-black marginRight10">Collapse All</button>
+                    <button id="colExAll" class="w3-right w3-button w3-black marginRight10">Collapse All</button>
                 </div>
  
                 <fieldset class = "w3-margin-bottom">
-                <legend><button onclick= "myFunction('General')" class= "w3-button w3-black">General <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
+                <legend><button id="btnGeneral" class= "colExBtn w3-button w3-black">General <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
                     <form class= "addActForm">
-                        <div id="General" class="w3-hide marginRight">
+                        <div id="General" class="marginRight">
                             <div class="w3-display-container">
                                 <div class="w3-quarter w3-display-container" style="height: 40px">
                                     <label class="w3-display-middle w3-text-red" style="font-weight: bold">Name *</label> 
@@ -56,44 +56,49 @@
                     </form>
                 </fieldset>
                 
+                <?php
+                    //echo submission time 
+                    if($_GET['typeAct'] == 1){
+                        echo '<fieldset class = "w3-margin-bottom">
+                                <legend><button id="btnAvailability" class= "colExBtn w3-button w3-black">Availability <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
+                                    <form class= "addActForm">
+                                        <div id="Availability" class="marginRight">
+                                            <div class="w3-display-container">
+                                                <div class="w3-quarter w3-display-container" style="height: 40px">
+                                                    <label class="w3-display-left">Allow subsmissions from <i class="fa fa-question-circle" aria-hidden="true"></i></label>
+                                                </div>
+                                                <div class="w3-rest">
+                                                    <table>
+                                                        <tr>
+                                                            <td><input type="date" class="w3-input w3-border" style="width: auto" disabled></td>
+                                                            <td><input type="checkbox"> Enable</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="w3-display-container">
+                                                <div class="w3-quarter w3-display-container" style="height: 40px">
+                                                    <label class="w3-display-middle">Dude date <i class="fa fa-question-circle" aria-hidden="true"></i></label> 
+                                                </div>
+                                                <div class="w3-rest">
+                                                    <table>
+                                                        <tr>
+                                                            <td><input type="date" class="w3-input w3-border" style="width: auto" disabled></td>
+                                                            <td><input type="checkbox"> Enable</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </fieldset>';
+                    }
+                ?>
+
                 <fieldset class = "w3-margin-bottom">
-                <legend><button onclick= "myFunction('Availability')" class= "w3-button w3-black">Availability <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
+                <legend><button id="btnContent" class= "colExBtn w3-button w3-black">Content <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
                     <form class= "addActForm">
-                        <div id="Availability" class="w3-hide marginRight">
-                            <div class="w3-display-container">
-                                <div class="w3-quarter w3-display-container" style="height: 40px">
-                                    <label class="w3-display-left">Allow subsmissions from <i class="fa fa-question-circle" aria-hidden="true"></i></label>
-                                </div>
-                                <div class="w3-rest">
-                                    <table>
-                                        <tr>
-                                            <td><input type="date" class="w3-input w3-border" style="width: auto" disabled></td>
-                                            <td><input type="checkbox"> Enable</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="w3-display-container">
-                                <div class="w3-quarter w3-display-container" style="height: 40px">
-                                    <label class="w3-display-middle">Dude date <i class="fa fa-question-circle" aria-hidden="true"></i></label> 
-                                </div>
-                                <div class="w3-rest">
-                                    <table>
-                                        <tr>
-                                            <td><input type="date" class="w3-input w3-border" style="width: auto" disabled></td>
-                                            <td><input type="checkbox"> Enable</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </fieldset>
-     
-                <fieldset class = "w3-margin-bottom">
-                <legend><button onclick= "myFunction('Content')" class= "w3-button w3-black">Content <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
-                    <form class= "addActForm">
-                        <div id="Content" class="w3-hide marginRight">
+                        <div id="Content" class="marginRight">
                             <div class="w3-display-container">
                                 <div class="w3-quarter w3-display-container" style="height: 40px">
                                     <label class="w3-display-middle">Select files <i class="fa fa-question-circle" aria-hidden="true"></i></label> 
@@ -106,14 +111,42 @@
 		</div>
 
         <script>
+            var totalKebuka = 3;
+            var id = ["General","Availability","Content"];
+
             function myFunction(id) {
                 var x = document.getElementById(id);
-                if (x.className.indexOf("w3-show") == -1) {
-                    x.className += " w3-show";
+                if (x.className.indexOf("w3-hide") == -1) {
+                    totalKebuka--;
+                    x.className += " w3-hide";
                 } else { 
-                    x.className = x.className.replace(" w3-show", "");
+                    totalKebuka++;
+                    x.className = x.className.replace(" w3-hide", "");
+                }
+
+                if(totalKebuka > 0){
+                    $('#colExAll').html("Collapse All");
+                }else{
+                    $('#colExAll').html("Expand All");
                 }
             }
+
+            $(document).ready(function(){
+                $('.colExBtn').click(function(){
+                    var tempID = $(this).attr('id').slice(3);
+                    myFunction(tempID);
+                });
+
+                $('#colExAll').click(function(){
+                    if(totalKebuka == 0){
+                        if($()){
+
+                        }
+                    }else{
+
+                    }
+                });
+            });
         </script>
 	</body>
 </html>
