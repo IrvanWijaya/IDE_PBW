@@ -62,13 +62,15 @@
 						<h2>Select Activity</h2>
 					</div>
 
-					<form id="addActForm" class="w3-container formInput" method="GET" action="">
+					<form id="addActForm" class="w3-container formInput" method="GET" action="addingActivity.php">
 						<p>
 						  	<input class="w3-radio" type="radio" name="typeAct" value="1">
   							<i class="fa fa-file-text-o"></i> <label>Assignment</label></p>
 						<p>
 						  	<input class="w3-radio" type="radio" name="typeAct" value="2" >
   							<i class="fa fa-file-o"></i> <label>File</label></p>
+						    <input type="hidden" class="code" name="code" />
+						    <input type="hidden" class="topic" name="topic" />
 						<input id="btnSubmit" type="button" class="w3-btn w3-black" value="Add">
 					</form>
 				</div>
@@ -114,9 +116,8 @@
 				});
 				
 				$('#btnSubmit').click(function(){
-					var action = PATH + "code=" + code + "&topic=" + topic + "&type=" + type;
-					console.log(action);
-					$('#addActForm').attr('action', action);
+					$("input.code").val(code);
+					$("input.topic").val(topic);
 					$('#addActForm').submit();
 				});
 			});	

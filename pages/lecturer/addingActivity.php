@@ -25,7 +25,7 @@
 			?>
 			<div style="margin-left:25%">
 
-			<div class="w3-container overview" style="overflow: hidden">
+			<div class="w3-container overview">
 				<h1 class = "w3-panel w3-gray marginRight10">Adding New Assignment</h1>
 
                 <div style="height:40px; width:100%">
@@ -53,18 +53,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="w3-display-container">
-                            <div class="w3-quarter w3-display-container" style="height: 100px">
-                                <label class="w3-display-middle">Description</label> 
-                            </div>
-                            <div class="w3-rest">
-                                <textarea  class="w3-input w3-border" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
-                            </div>
-                        </div>
-                    </div>
                     </form>
                 </fieldset>
-
+                
                 <fieldset class = "w3-margin-bottom">
                 <legend><button onclick= "myFunction('Availability')" class= "w3-button w3-black">Availability <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
                     <form class= "addActForm">
