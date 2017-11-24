@@ -25,7 +25,6 @@
 			?>
 			<div style="margin-left:25%">
 
-
 			<div class="w3-container overview">
 				<h1 class = "w3-panel w3-gray marginRight10"><?php echo $_GET['courseTitle']?></h1>
 
