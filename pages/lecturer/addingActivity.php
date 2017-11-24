@@ -36,7 +36,7 @@
                 <legend><button id="btnGeneral" class= "colExBtn w3-button w3-black">General <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
                     <form class= "addActForm">
                         <div id="General" class="marginRight">
-                            <div class="w3-display-container">
+                            <div class="w3-display-container marginB10">
                                 <div class="w3-quarter w3-display-container" style="height: 40px">
                                     <label class="w3-display-middle w3-text-red" style="font-weight: bold">Name *</label> 
                                 </div>
@@ -45,7 +45,7 @@
                                 </div>
                             </div>
                             <div class="w3-display-container">
-                                <div class="w3-quarter w3-display-container" style="height: 40px">
+                                <div class="w3-quarter w3-display-container" style="height: 100px">
                                     <label class="w3-display-middle">Description</label> 
                                 </div>
                                 <div class="w3-rest">
@@ -63,7 +63,7 @@
                                 <legend><button id="btnAvailability" class= "colExBtn w3-button w3-black">Availability <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
                                     <form class= "addActForm">
                                         <div id="Availability" class="marginRight">
-                                            <div class="w3-display-container">
+                                            <div class="w3-display-container marginB10">
                                                 <div class="w3-quarter w3-display-container" style="height: 40px">
                                                     <label class="w3-display-left">Allow subsmissions from <i class="fa fa-question-circle" aria-hidden="true"></i></label>
                                                 </div>
@@ -114,7 +114,7 @@
             var totalKebuka = 3;
             var id = ["General","Availability","Content"];
 
-            function myFunction(id) {
+            function expandOrCollapse(id) {
                 var x = document.getElementById(id);
                 if (x.className.indexOf("w3-hide") == -1) {
                     totalKebuka--;
@@ -134,16 +134,22 @@
             $(document).ready(function(){
                 $('.colExBtn').click(function(){
                     var tempID = $(this).attr('id').slice(3);
-                    myFunction(tempID);
+                    expandOrCollapse(tempID);
                 });
 
                 $('#colExAll').click(function(){
+                    var i = 0;
+                    console.log($('#'+id[i]).is(".w3-hide"));
                     if(totalKebuka == 0){
-                        if($()){
-
+                        for(i = 0; i < id.length; i++){
+                            expandOrCollapse(id[i]);
                         }
                     }else{
-
+                        for(i = 0; i < id.length; i++){
+                            if(!$('#'+id[i]).is(".w3-hide")){
+                                expandOrCollapse(id[i]);
+                            }
+                        }                        
                     }
                 });
             });
