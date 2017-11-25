@@ -97,12 +97,15 @@
 
                 <fieldset class = "w3-margin-bottom">
                 <legend><button id="btnContent" class= "colExBtn w3-button w3-black">Content <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
-                    <form class= "addActForm">
+                    <form class= "addActForm" method="post" enctype="multipart/form-data">
                         <div id="Content" class="marginRight">
                             <div class="w3-display-container">
                                 <div class="w3-quarter w3-display-container" style="height: 40px">
-                                    <label class="w3-display-middle">Select files <i class="fa fa-question-circle" aria-hidden="true"></i></label> 
+                                    <label class="w3-display-middle">Select files <i class="fa fa-question-circle" aria-hidden="true"></i></label>
                                 </div>
+                                <div class="w3-rest w3-display-container">
+                                    <input type="file" name="fileToUpload" id="fileToUpload" style="margin-top: 5px">
+                                </div> 
                             </div>
                         </div>
                     </form>
