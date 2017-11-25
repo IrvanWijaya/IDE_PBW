@@ -80,7 +80,6 @@
 		<script>
 			var topic;
 			var type;
-			var PATH = "addingActivity.php?";
 			var code;
 
 			var getUrlParameter = function getUrlParameter(sParam) {
