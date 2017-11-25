@@ -26,5 +26,5 @@
             ?>" class="w3-bar-item w3-button"> <i class="fa fa-home" style="font-size:18px;width:40px"></i> HOME</a>
     <a href="#" class="w3-bar-item w3-button"> <i class="fa fa-list" style="font-size:18px;width:40px"></i> MY COURSES</a>
     <a href="#" class="w3-bar-item w3-button"> <i class="fa fa-user" style="font-size:18px;width:40px"></i> MY PROFILE</a>
-    <a href="../../index.php" class="w3-bar-item w3-button"> <i class="fa fa-power-off" style="font-size:18px;width:40px"></i> LOGOUT</a>
+    <a href="../../phpScript/logout.php" class="w3-bar-item w3-button"> <i class="fa fa-power-off" style="font-size:18px;width:40px"></i> LOGOUT</a>
 </div>
