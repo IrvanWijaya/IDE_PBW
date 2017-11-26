@@ -31,7 +31,11 @@
                 <div style="height:40px; width:100%">
                     <button id="colExAll" class="w3-right w3-button w3-black marginRight10">Collapse All</button>
                 </div>
-                <form id ="addActForm" class= "w3-display-container" action="../../upload.php" method="post" enctype="multipart/form-data">
+                <form id ="addActForm" class= "w3-display-container" action="../../phpScript/upload.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="typeAct" value="<?php echo $_GET['typeAct'] ?>" />
+                    <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>" />
+                    <input type="hidden" name="topic" value="<?php echo $_GET['topic'] ?>"/>
+                    
                     <fieldset class = "w3-margin-bottom">
                     <legend><button id="btnGeneral" class= "colExBtn w3-button w3-black">General <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
                         <div id="General" class="marginRight">
@@ -40,7 +44,7 @@
                                     <label class="w3-display-middle w3-text-red" style="font-weight: bold">Name *</label> 
                                 </div>
                                 <div class="w3-rest">
-                                    <input type="text" class="w3-input w3-border" required>
+                                    <input type="text" class="w3-input w3-border" name="title" required>
                                 </div>
                             </div>
                             <div class="w3-display-container">
@@ -48,7 +52,7 @@
                                     <label class="w3-display-middle">Description</label> 
                                 </div>
                                 <div class="w3-rest">
-                                    <textarea  class="w3-input w3-border" rows="4" cols="50" name="comment" form="usrform">Enter text here...</textarea>
+                                    <textarea  class="w3-input w3-border" rows="4" cols="50" name="submissions" placeholder="Enter text here..."></textarea>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +71,7 @@
                                                 <div class="w3-rest">
                                                     <table>
                                                         <tr>
-                                                            <td><input id= "startDate" type="date" class="w3-input w3-border" style="width: auto"></td>
+                                                            <td><input id= "startDate" type="date" class="w3-input w3-border" style="width: auto" name="dateOpen"></td>
                                                             <td><input id= "enStart" type="checkbox"> Enable</td>
                                                         </tr>
                                                     </table>
@@ -80,7 +84,7 @@
                                                 <div class="w3-rest">
                                                     <table>
                                                         <tr>
-                                                            <td><input id= "endDate" type="date" class="w3-input w3-border" style="width: auto"></td>
+                                                            <td><input id= "endDate" type="date" class="w3-input w3-border" style="width: auto" name="dateClose"></td>
                                                             <td><input id= "enEnd" type="checkbox"> Enable</td>
                                                         </tr>
                                                     </table>
@@ -119,9 +123,6 @@
             var totalKebuka = 3;
             var id = ["General","Availability","Content"];
 
-            var startDate = true;
-            var endDate = true;
-
             function expandOrCollapse(id) {
                 var x = document.getElementById(id);
                 if (x.className.indexOf("w3-hide") == -1) {
@@ -140,6 +141,10 @@
             }
 
             $(document).ready(function(){
+                console.log($('#enStart').is(":checked"));
+                var startDate = !$('#enStart').is(":checked");
+                var endDate = !$('#enEnd').is(":checked");
+
                 $('#startDate').prop('disabled',startDate);
                 $('#endDate').prop('disabled',endDate);
 
@@ -150,7 +155,6 @@
 
                 $('#colExAll').click(function(){
                     var i = 0;
-                    console.log($('#'+id[i]).is(".w3-hide"));
                     if(totalKebuka == 0){
                         for(i = 0; i < id.length; i++){
                             expandOrCollapse(id[i]);
