@@ -28,11 +28,11 @@
 			<div class="w3-container overview">
 				<h1 class = "w3-panel w3-gray marginRight10"><?php echo $_GET['courseTitle']?></h1>
 
-				<?php 
-					//$_SESSION['courseID'] = $_GET['id'];
+				<?php
+					//buat topic 
+					$_SESSION['courseID'] = $_GET['id'];
 					//bwt cancel di addingActivity
 					$_SESSION['courseTitle'] = $_GET['courseTitle'];
-					echo $_SESSION['courseTitle'];
 
 					include("../../phpScript/topics.php");
 					while($row)

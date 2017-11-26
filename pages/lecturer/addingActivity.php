@@ -31,7 +31,7 @@
                 <div style="height:40px; width:100%">
                     <button id="colExAll" class="w3-right w3-button w3-black marginRight10">Collapse All</button>
                 </div>
-                <form id ="addActForm" class= "w3-display-container">
+                <form id ="addActForm" class= "w3-display-container" action="../../upload.php" method="post" enctype="multipart/form-data">
                     <fieldset class = "w3-margin-bottom">
                     <legend><button id="btnGeneral" class= "colExBtn w3-button w3-black">General <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
                         <div id="General" class="marginRight">
@@ -67,8 +67,8 @@
                                                 <div class="w3-rest">
                                                     <table>
                                                         <tr>
-                                                            <td><input type="date" class="w3-input w3-border" style="width: auto" disabled></td>
-                                                            <td><input type="checkbox"> Enable</td>
+                                                            <td><input id= "startDate" type="date" class="w3-input w3-border" style="width: auto"></td>
+                                                            <td><input id= "enStart" type="checkbox"> Enable</td>
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -80,8 +80,8 @@
                                                 <div class="w3-rest">
                                                     <table>
                                                         <tr>
-                                                            <td><input type="date" class="w3-input w3-border" style="width: auto" disabled></td>
-                                                            <td><input type="checkbox"> Enable</td>
+                                                            <td><input id= "endDate" type="date" class="w3-input w3-border" style="width: auto"></td>
+                                                            <td><input id= "enEnd" type="checkbox"> Enable</td>
                                                         </tr>
                                                     </table>
                                                 </div>
@@ -119,6 +119,9 @@
             var totalKebuka = 3;
             var id = ["General","Availability","Content"];
 
+            var startDate = true;
+            var endDate = true;
+
             function expandOrCollapse(id) {
                 var x = document.getElementById(id);
                 if (x.className.indexOf("w3-hide") == -1) {
@@ -137,6 +140,9 @@
             }
 
             $(document).ready(function(){
+                $('#startDate').prop('disabled',startDate);
+                $('#endDate').prop('disabled',endDate);
+
                 $('.colExBtn').click(function(){
                     var tempID = $(this).attr('id').slice(3);
                     expandOrCollapse(tempID);
@@ -156,6 +162,16 @@
                             }
                         }                        
                     }
+                });
+
+                $('#enStart').click(function(){
+                    startDate = !startDate;
+                    $('#startDate').prop('disabled',startDate);
+                });
+
+                $('#enEnd').click(function(){
+                    endDate = !endDate;
+                    $('#endDate').prop('disabled',endDate);
                 });
             });
         </script>
