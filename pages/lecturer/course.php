@@ -29,7 +29,11 @@
 				<h1 class = "w3-panel w3-gray marginRight10"><?php echo $_GET['courseTitle']?></h1>
 
 				<?php 
-					$_SESSION['courseID'] = $_GET['id'];
+					//$_SESSION['courseID'] = $_GET['id'];
+					//bwt cancel di addingActivity
+					$_SESSION['courseTitle'] = $_GET['courseTitle'];
+					echo $_SESSION['courseTitle'];
+
 					include("../../phpScript/topics.php");
 					while($row)
 					{
@@ -68,7 +72,7 @@
 						<p>
 						  	<input class="w3-radio" type="radio" name="typeAct" value="2" >
   							<i class="fa fa-file-o"></i> <label>File</label></p>
-						    <input type="hidden" class="code" name="code" />
+						    <input type="hidden" class="id" name="id" />
 						    <input type="hidden" class="topic" name="topic" />
 						<input id="btnSubmit" type="button" class="w3-btn w3-black" value="Add">
 					</form>
@@ -80,7 +84,7 @@
 		<script>
 			var topic;
 			var type;
-			var code;
+			var id;
 
 			var getUrlParameter = function getUrlParameter(sParam) {
 				var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -102,7 +106,7 @@
 			}
 			
 			$(document).ready(function() {
-				code = getUrlParameter('id');
+				id = getUrlParameter('id');
 
 				$('button.btnAddActivity').click(function() { 
 					topic = $(this).attr('id');
@@ -114,7 +118,7 @@
 				});
 				
 				$('#btnSubmit').click(function(){
-					$("input.code").val(code);
+					$("input.id").val(id);
 					$("input.topic").val(topic);
 					$('#addActForm').submit();
 				});

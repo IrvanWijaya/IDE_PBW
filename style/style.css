@@ -19,6 +19,10 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     margin-bottom: 10px;
 }
 
+.padding{
+    padding: 10px;
+}
+
 /*
 index.php
 */
@@ -184,6 +188,7 @@ topics.php
 /*
 addingActivity.php
 */
-.addActForm{
+#addActForm{
     margin-top: 10px;
+    padding-bottom: 20px;
 }

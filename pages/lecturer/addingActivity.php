@@ -31,10 +31,9 @@
                 <div style="height:40px; width:100%">
                     <button id="colExAll" class="w3-right w3-button w3-black marginRight10">Collapse All</button>
                 </div>
- 
-                <fieldset class = "w3-margin-bottom">
-                <legend><button id="btnGeneral" class= "colExBtn w3-button w3-black">General <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
-                    <form class= "addActForm">
+                <form id ="addActForm" class= "w3-display-container">
+                    <fieldset class = "w3-margin-bottom">
+                    <legend><button id="btnGeneral" class= "colExBtn w3-button w3-black">General <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
                         <div id="General" class="marginRight">
                             <div class="w3-display-container marginB10">
                                 <div class="w3-quarter w3-display-container" style="height: 40px">
@@ -53,15 +52,13 @@
                                 </div>
                             </div>
                         </div>
-                    </form>
-                </fieldset>
-                
-                <?php
-                    //echo submission time 
-                    if($_GET['typeAct'] == 1){
-                        echo '<fieldset class = "w3-margin-bottom">
-                                <legend><button id="btnAvailability" class= "colExBtn w3-button w3-black">Availability <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
-                                    <form class= "addActForm">
+                    </fieldset>
+                    
+                    <?php
+                        //echo submission time 
+                        if($_GET['typeAct'] == 1){
+                            echo '<fieldset class = "w3-margin-bottom">
+                                    <legend><button id="btnAvailability" class= "colExBtn w3-button w3-black">Availability <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
                                         <div id="Availability" class="marginRight">
                                             <div class="w3-display-container marginB10">
                                                 <div class="w3-quarter w3-display-container" style="height: 40px">
@@ -90,23 +87,28 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
-                                </fieldset>';
-                    }
-                ?>
+                                    </fieldset>';
+                        }
+                    ?>
 
-                <fieldset class = "w3-margin-bottom">
-                <legend><button id="btnContent" class= "colExBtn w3-button w3-black">Content <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
-                    <form class= "addActForm">
-                        <div id="Content" class="marginRight">
-                            <div class="w3-display-container">
-                                <div class="w3-quarter w3-display-container" style="height: 40px">
-                                    <label class="w3-display-middle">Select files <i class="fa fa-question-circle" aria-hidden="true"></i></label> 
+                    <fieldset class = "w3-margin-bottom">
+                    <legend><button id="btnContent" class= "colExBtn w3-button w3-black">Content <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
+                            <div id="Content" class="marginRight">
+                                <div class="w3-display-container">
+                                    <div class="w3-quarter w3-display-container" style="height: 40px">
+                                        <label class="w3-display-middle">Select files <i class="fa fa-question-circle" aria-hidden="true"></i></label> 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
-                </fieldset>
+                    </fieldset>
+
+                    <div style="height:40px;"></div>
+                    <div class="w3-display-bottommiddle" style="padding-bottom:20px">
+                        <input type="submit" class="w3-button w3-black w3-container padding" value="SAVE AND RETURN TO COURSE">
+                        <a href="course.php?id=<?php echo $_GET['id']; ?>&courseTitle=<?php echo $_SESSION['courseTitle']; ?>"
+                            class= "w3-button w3-black w3-container padding">Cancel</a>
+                    </div>
+                </form>
 			</div>
 		</div>
 
