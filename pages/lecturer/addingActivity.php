@@ -99,6 +99,9 @@
                                         <label class="w3-display-middle">Select files <i class="fa fa-question-circle" aria-hidden="true"></i></label> 
                                     </div>
                                 </div>
+                                <div class="w3-rest w3-display-container">
+                                    <input type="file" name="fileToUpload" id="fileToUpload" style="margin-top: 5px">
+                                </div> 
                             </div>
                     </fieldset>
 
