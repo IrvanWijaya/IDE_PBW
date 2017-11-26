@@ -141,12 +141,11 @@
             }
 
             $(document).ready(function(){
-                console.log($('#enStart').is(":checked"));
-                var startDate = !$('#enStart').is(":checked");
-                var endDate = !$('#enEnd').is(":checked");
+                var disStartDate = !$('#enStart').is(":checked");
+                var disEndDate = !$('#enEnd').is(":checked");
 
-                $('#startDate').prop('disabled',startDate);
-                $('#endDate').prop('disabled',endDate);
+                $('#startDate').prop('disabled',disStartDate);
+                $('#endDate').prop('disabled',disEndDate);
 
                 $('.colExBtn').click(function(){
                     var tempID = $(this).attr('id').slice(3);
@@ -169,13 +168,13 @@
                 });
 
                 $('#enStart').click(function(){
-                    startDate = !startDate;
-                    $('#startDate').prop('disabled',startDate);
+                    disStartDate = !disStartDate;
+                    $('#startDate').prop('disabled',disStartDate);
                 });
 
                 $('#enEnd').click(function(){
-                    endDate = !endDate;
-                    $('#endDate').prop('disabled',endDate);
+                    disEndDate = !disEndDate;
+                    $('#endDate').prop('disabled',disEndDate);
                 });
             });
         </script>
