@@ -22,9 +22,13 @@
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-            
+
             include 'connection.php';
-            $query = "INSERT INTO activities (ID_AT,ID_C,title,topic,fileDir) VALUES ($_POST[typeAct],$_POST[id],'$_POST[title]',$_POST[topic],'$target_file')";
+            if (empty($_POST['dateOpen']) && empty($_POST['dateClose'])){
+                $query = "INSERT INTO activities (ID_AT,ID_C,title,topic,fileDir) VALUES ($_POST[typeAct],$_POST[id],'$_POST[title]',$_POST[topic],'$target_file')";
+            } else {
+                $query = "INSERT INTO activities (ID_AT,ID_C,dateOpen,dateClose,title,topic,fileDir) VALUES ($_POST[typeAct],$_POST[id],'$_POST[dateOpen]','$_POST[dateClose]','$_POST[title]',$_POST[topic],'$target_file')";
+            }
             $conn->query($query);
         } else {
             echo "Sorry, there was an error uploading your file.";
