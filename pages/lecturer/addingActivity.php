@@ -31,7 +31,7 @@
                 <div style="height:40px; width:100%">
                     <button id="colExAll" class="w3-right w3-button w3-black marginRight10">Collapse All</button>
                 </div>
-                <form id ="addActForm" class= "w3-display-container" action="../../phpScript/upload.php" method="post" enctype="multipart/form-data">
+                <form id ="addActForm" class= "w3-display-container" action="../../phpScript/upload.php" method="post" enctype="multipart/form-data" novalidate>
                     <input type="hidden" name="typeAct" value="<?php echo $_GET['typeAct'] ?>" />
                     <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>" />
                     <input type="hidden" name="topic" value="<?php echo $_GET['topic'] ?>"/>
@@ -120,8 +120,16 @@
 		</div>
 
         <script>
-            var totalKebuka = 3;
-            var id = ["General","Availability","Content"];
+            var tipeAssign = getQueryVariable("typeAct");
+            var totalKebuka;
+            var id;
+            if(tipeAssign == 1){
+                totalKebuka = 3;
+                id = ["General","Availability","Content"];
+            } else {
+                totalKebuka = 2;
+                id = ["General","Content"];
+            }
 
             function expandOrCollapse(id) {
                 var x = document.getElementById(id);
@@ -140,6 +148,17 @@
                 }
             }
 
+            function getQueryVariable(variable) {
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i=0;i<vars.length;i++) {
+                    var pair = vars[i].split("=");
+                    if (pair[0] == variable) {
+                        return pair[1];
+                    }
+                }
+            }
+
             $(document).ready(function(){
                 var disStartDate = !$('#enStart').is(":checked");
                 var disEndDate = !$('#enEnd').is(":checked");
@@ -154,6 +173,7 @@
 
                 $('#colExAll').click(function(){
                     var i = 0;
+                    console.log(totalKebuka);
                     if(totalKebuka == 0){
                         for(i = 0; i < id.length; i++){
                             expandOrCollapse(id[i]);
