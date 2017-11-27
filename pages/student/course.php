@@ -44,7 +44,7 @@
 									if($row['topic'] != $temp){
 										break;
 									}
-									echo "<a href='#'>" . $row['title'] . "</a>";
+									echo "<a href='download.php?nama=" . $row['title'] . "'>" . $row['title'] . "</a>";
 								}
 
 						echo    "</div>";
