@@ -32,9 +32,12 @@
 					include("../../phpScript/courses.php");
 					while($row = $result->fetch_array())
 					{
-						$_SESSION['courseCode'] = $row['code'];
+						//$_SESSION['courseCode'] = $row['code'];
 						echo 	"<div class = 'w3-display-container w3-panel w3-card-4 coursesList'>
-									<a href = 'course.php?id=" . $row['id'] . "&courseTitle=" . $row['course']. "' class= 'w3-display-left noTextDecoration'>" . $row['code']. "/" . $row['course']."</a>
+									<a href = 'course.php?id=" . $row['id'] . "&courseTitle=" . $row['course']. "&code=" . $row['code'] ."' 
+										class= 'w3-display-left noTextDecoration'>" . 
+											$row['code']. "/" . $row['course'].
+									"</a>
 								</div>";
 					}
 				?>

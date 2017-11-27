@@ -74,6 +74,7 @@
   							<i class="fa fa-file-o"></i> <label>File</label></p>
 						    <input type="hidden" class="id" name="id" />
 						    <input type="hidden" class="topic" name="topic" />
+							<input type="hidden" class="code" name="code" value ="<?php echo $_GET['code']?>" />
 						<input id="btnSubmit" type="button" class="w3-btn w3-black" value="Add">
 					</form>
 				</div>

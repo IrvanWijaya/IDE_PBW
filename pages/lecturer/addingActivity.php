@@ -34,7 +34,7 @@
                 <form id ="addActForm" class= "w3-display-container" action="../../phpScript/upload.php" method="post" enctype="multipart/form-data" novalidate>
                     <input type="hidden" name="typeAct" value="<?php echo $_GET['typeAct'] ?>" />
                     <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>" />
-                    <input type="hidden" name="code" value="<?php echo $_SESSION['courseCode'] ?>" />
+                    <input type="hidden" name="code" value="<?php echo $_GET['code'] ?>" />
                     <input type="hidden" name="topic" value="<?php echo $_GET['topic'] ?>"/>
                     
                     <fieldset class = "w3-margin-bottom">
@@ -174,7 +174,6 @@
 
                 $('#colExAll').click(function(){
                     var i = 0;
-                    console.log(totalKebuka);
                     if(totalKebuka == 0){
                         for(i = 0; i < id.length; i++){
                             expandOrCollapse(id[i]);
