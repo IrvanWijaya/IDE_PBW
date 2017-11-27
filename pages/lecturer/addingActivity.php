@@ -34,7 +34,7 @@
                 <form id ="addActForm" class= "w3-display-container" action="../../phpScript/upload.php" method="post" enctype="multipart/form-data" novalidate>
                     <input type="hidden" name="typeAct" value="<?php echo $_GET['typeAct'] ?>" />
                     <input type="hidden" name="id" value="<?php echo $_GET['id'] ?>" />
-                    <input type="hidden" name="code" value="<?php echo $_GET['code'] ?>" />
+                    <input type="hidden" name="code" value="<?php echo $_SESSION['courseCode']?>" />
                     <input type="hidden" name="topic" value="<?php echo $_GET['topic'] ?>"/>
                     
                     <fieldset class = "w3-margin-bottom">
@@ -113,7 +113,7 @@
                     <div style="height:40px;"></div>
                     <div class="w3-display-bottommiddle" style="padding-bottom:20px">
                         <input type="submit" class="w3-button w3-black w3-container padding" value="SAVE AND RETURN TO COURSE">
-                        <a href="course.php?id=<?php echo $_GET['id']; ?>&courseTitle=<?php echo $_SESSION['courseTitle']; ?>"
+                        <a href="course.php?id=<?php echo $_GET['id']; ?>&courseTitle=<?php echo $_SESSION['courseTitle']; ?>&code=<?php echo $_SESSION['courseCode']?>"
                             class= "w3-button w3-black w3-container padding">Cancel</a>
                     </div>
                 </form>

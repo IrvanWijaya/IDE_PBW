@@ -29,11 +29,12 @@
 				<h1 class = "w3-panel w3-gray marginRight10"><?php echo $_GET['courseTitle']?></h1>
 
 				<?php
-					//buat topic 
+					//buat topic & cancel
 					$_SESSION['courseID'] = $_GET['id'];
-					//bwt cancel di addingActivity
+					//bwt cancel di addingActivity & gagal upload
+					$_SESSION['courseCode'] = $_GET['code'];
 					$_SESSION['courseTitle'] = $_GET['courseTitle'];
-
+					
 					include("../../phpScript/topics.php");
 					while($row)
 					{
@@ -74,7 +75,6 @@
   							<i class="fa fa-file-o"></i> <label>File</label></p>
 						    <input type="hidden" class="id" name="id" />
 						    <input type="hidden" class="topic" name="topic" />
-							<input type="hidden" class="code" name="code" value ="<?php echo $_GET['code']?>" />
 						<input id="btnSubmit" type="button" class="w3-btn w3-black" value="Add">
 					</form>
 				</div>
@@ -85,7 +85,7 @@
 		<script>
 			var topic;
 			var type;
-			var id;
+			var id;//Pindahin ke PHP
 
 			var getUrlParameter = function getUrlParameter(sParam) {
 				var sPageURL = decodeURIComponent(window.location.search.substring(1)),
