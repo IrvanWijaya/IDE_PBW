@@ -30,9 +30,10 @@
 
 				<?php 
 					$_SESSION['courseID'] = $_GET['id'];
+					$_SESSION['courseTitle'] = $_GET['courseTitle'];
 					
 					include("../../phpScript/topics.php");
-					 while($row)
+					while($row)
 					{
 						$temp = $row['topic'];
 						echo 	"<div class = 'w3-display-container w3-panel w3-card-4 topicList marginRight10'>

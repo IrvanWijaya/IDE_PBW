@@ -33,7 +33,7 @@
 					while($row = $result->fetch_array())
 					{
 						echo 	"<div class = 'w3-display-container w3-panel w3-card-4 coursesList'>
-									<a href = 'course.php?id=" . $row['code'] . "&courseTitle=" . $row['course']. "' class= 'w3-display-left noTextDecoration'>" . $row['code']. "/" . $row['course']."</a>
+									<a href = 'course.php?id=" . $row['id'] . "&courseTitle=" . $row['course']. "' class= 'w3-display-left noTextDecoration'>" . $row['code']. "/" . $row['course']."</a>
 								</div>";
 					}
 				?>
