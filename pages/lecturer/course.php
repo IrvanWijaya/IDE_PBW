@@ -46,7 +46,16 @@
 									if($row['topic'] != $temp){
 										break;
 									}
-									echo "<a href='#'>" . $row['title'] . "</a>";
+									
+									if($row['ID_AT'] == 2){
+										$fileDir = "../" . $row['fileDir'];
+										echo "<a href='$fileDir' download>File " . $row['title'] . "</a>";
+									}
+									else{
+										echo "<a href='../phpScript/assignment.php?id=". $row['ID_A'] ."'>
+												Assignment " . $row['title'] . 
+											"</a>";
+									}
 								} ?>
 
 								<button 
