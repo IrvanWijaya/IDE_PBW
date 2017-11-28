@@ -28,8 +28,9 @@
 			<div class="w3-container overview">
 				<h1 class = "w3-panel w3-gray marginRight10"><?php echo $_GET['courseTitle']?></h1>
 
-				<?php 
+				<?php
 					$_SESSION['courseID'] = $_GET['id'];
+					$_SESSION['courseCode'] = $_GET['code'];
 					$_SESSION['courseTitle'] = $_GET['courseTitle'];
 					
 					include("../../phpScript/topics.php");
@@ -49,7 +50,7 @@
 										echo "<a href='$fileDir' download>File " . $row['title'] . "</a>";
 									}
 									else{
-										echo "<a href='../phpScript/submission.php?id=". $row['ID_A'] ."'>
+										echo "<a href='submission.php?id=". $row['ID_A'] ."'>
 												Assignment " . $row['title'] . 
 											"</a>";
 									}
