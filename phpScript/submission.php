@@ -17,10 +17,6 @@
                                 <td>Due date</td>
                                 <td>$row[dateClose]</td>
                             </tr>
-                            <tr>
-                                <td>Due date</td>
-                                <td>$row[dateClose]</td>
-                            </tr>
                         </table>";
             ?>
             <input type="file" name="fileToUpload" id="fileToUpload">
