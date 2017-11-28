@@ -40,8 +40,7 @@
 					{
 						$temp = $row['topic'];
 						echo 	"<div class = 'w3-display-container w3-panel w3-card-4 topicList marginRight10'>
-									<i class = 'fa fa-newspaper-o'></i><span> Topic $temp</span></br> 
-									<a href='#'>" . $row['title']."</a>";
+									<i class = 'fa fa-newspaper-o'></i><span> Topic $temp</span></br>";
 								
 								while($row = $result->fetch_array()){
 									if($row['topic'] != $temp){
