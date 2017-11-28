@@ -38,7 +38,7 @@
                     <input type="hidden" name="topic" value="<?php echo $_GET['topic'] ?>"/>
                     
                     <fieldset class = "w3-margin-bottom">
-                    <legend><button id="btnGeneral" class= "colExBtn w3-button w3-black">General <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
+                    <legend><div id="btnGeneral" class= "colExBtn w3-button w3-black">General <i class="fa fa-sort-desc" aria-hidden="true"></i></div></legend>
                         <div id="General" class="marginRight">
                             <div class="w3-display-container marginB10">
                                 <div class="w3-quarter w3-display-container" style="height: 40px">
@@ -63,7 +63,7 @@
                         //echo submission time 
                         if($_GET['typeAct'] == 1){
                             echo '<fieldset class = "w3-margin-bottom">
-                                    <legend><button id="btnAvailability" class= "colExBtn w3-button w3-black">Availability <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
+                                    <legend><div id="btnAvailability" class= "colExBtn w3-button w3-black">Availability <i class="fa fa-sort-desc" aria-hidden="true"></i></div></legend>
                                         <div id="Availability" class="marginRight">
                                             <div class="w3-display-container marginB10">
                                                 <div class="w3-quarter w3-display-container" style="height: 40px">
@@ -97,7 +97,7 @@
                     ?>
 
                     <fieldset class = "w3-margin-bottom">
-                    <legend><button id="btnContent" class= "colExBtn w3-button w3-black">Content <i class="fa fa-sort-desc" aria-hidden="true"></i></button></legend>
+                    <legend><div id="btnContent" class= "colExBtn w3-button w3-black">Content <i class="fa fa-sort-desc" aria-hidden="true"></i></div></legend>
                             <div id="Content" class="marginRight">
                                 <div class="w3-display-container">
                                     <div class="w3-quarter w3-display-container" style="height: 40px">
