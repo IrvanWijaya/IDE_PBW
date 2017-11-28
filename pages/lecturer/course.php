@@ -52,7 +52,7 @@
 										echo "<a href='$fileDir' download>File " . $row['title'] . "</a>";
 									}
 									else{
-										echo "<a href='../phpScript/assignment.php?id=". $row['ID_A'] ."'>
+										echo "<a href='../phpScript/submission.php?id=". $row['ID_A'] ."'>
 												Assignment " . $row['title'] . 
 											"</a>";
 									}
