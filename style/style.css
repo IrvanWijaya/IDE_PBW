@@ -19,6 +19,10 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     margin-bottom: 10px;
 }
 
+.marginB20{
+    margin-bottom: 20px;
+}
+
 .padding{
     padding: 10px;
 }
@@ -191,4 +195,9 @@ addingActivity.php
 #addActForm{
     margin-top: 10px;
     padding-bottom: 20px;
+}
+
+.submissionTable td, th{
+    border: 1px solid #ddd;
+    text-align: left;
 }

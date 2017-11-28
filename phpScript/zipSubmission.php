@@ -1,5 +1,5 @@
 <?php
-    $directory = '../upload/1/AIF315/';
+    $directory = $_GET['dir'];
     $scanned_directory = array_diff(scandir($directory), array('..', '.'));
 
     $zip = new ZipArchive();

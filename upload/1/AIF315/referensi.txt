@@ -1,0 +1,22 @@
+asycn storage
+https://www.tutorialspoint.com/react_native/react_native_asyncstorage.htm
+
+sidebar menu
+https://github.com/bringnow/react-native-sidebar
+
+style
+https://github.com/xinthink/react-native-material-kit
+
+theme
+http://startreact.com/themes/
+
+shape
+http://browniefed.com/blog/the-shapes-of-react-native/
+
+flexbox guide
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/#article-header-id-10
+
+debug
+https://unbug.gitbooks.io/react-native-training/content/13_debug_tools.html
+
+vhost -- supaya gausah di ht docs si folder projectnya

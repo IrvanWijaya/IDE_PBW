@@ -46,13 +46,12 @@
 									if($row['topic'] != $temp){
 										break;
 									}
-									
+									$fileDir = "../" . $row['fileDir'];
 									if($row['ID_AT'] == 2){
-										$fileDir = "../" . $row['fileDir'];
 										echo "<a href='$fileDir' download>File " . $row['title'] . "</a>";
 									}
 									else{
-										echo "<a href='submission.php?id=". $row['ID_A'] ."'>
+										echo "<a href='submission.php?id=". $row['ID_A'] ."&dir=". $fileDir ."'>
 												Assignment " . $row['title'] . 
 											"</a>";
 									}

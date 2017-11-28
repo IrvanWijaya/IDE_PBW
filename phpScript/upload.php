@@ -66,7 +66,7 @@
         if (file_exists($target_file)) {
             echo "<script>
             alert('Sorry, file already exists.');
-            window.location.href='../pages/student/submission.php?id=". $_POST['id'] ."';
+            window.location.href='../pages/student/submission.php?id=". $_POST['id'] ."&dir=". $_POST['dir'] ."';
             </script>";
             $uploadOk = 0;
         }
@@ -74,7 +74,7 @@
         if ($uploadOk == 0) {
             echo "<script>
             alert('Sorry, your file was not uploaded.');
-            window.location.href='../pages/student/submission.php?id=". $_POST['id'] ."';
+            window.location.href='../pages/student/submission.php?id=". $_POST['id'] ."&dir=". $_POST['dir'] ."';
             </script>";
         // if everything is ok, try to upload file
         } else {
@@ -85,13 +85,23 @@
                     $query = "INSERT INTO submissions (ID_A,ID_U,submitTime,fileDirectory) 
                             VALUES ($_POST[id],$_SESSION[ID_U],'$date','$target_file')";
                 $conn->query($query);
+
+                $submissions = $_POST['submissions'] + 1;
+                echo $submissions;
+                $query = "UPDATE activities
+                            SET submissions=$submissions
+                            WHERE ID_A = $_POST[id]";
+                $conn->query($query);
                 
-                header("Location: ../pages/student/submission.php?id=". $_POST['id'] ."");
+                echo "<script>
+                alert('Successfully Uploaded.');
+                window.location.href='../pages/student/submission.php?id=". $_POST['id'] ."&dir=". $_POST['dir'] ."';
+                </script>";
             }
             else {
                 echo "<script>
                 alert('Sorry, there was an error uploading your file.');
-                window.location.href='../pages/student/submission.php?id=". $_POST['id'] ."';
+                window.location.href='../pages/student/submission.php?id=". $_POST['id'] ."&dir=". $_POST['dir'] ."';
                 </script>";
             }
         }
