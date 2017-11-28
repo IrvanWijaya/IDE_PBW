@@ -44,7 +44,12 @@
 									if($row['topic'] != $temp){
 										break;
 									}
-									echo "<a href='download.php?nama=" . $row['title'] . "'>" . $row['title'] . "</a>";
+									$fileDir = "../";
+									$queryDir = "SELECT * FROM activities WHERE title = '$row[title]'";
+									$resultDir = $conn->query($queryDir);
+									$rowDir = $resultDir->fetch_array();
+									$fileDir .= $rowDir['fileDir'];
+									echo "<a href='$fileDir' download>" . $row['title'] . "</a>";
 								}
 
 						echo    "</div>";
